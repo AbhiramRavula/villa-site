@@ -1,0 +1,5 @@
+<svg width="120" height="40" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M20 4L6 36h6l8-18 8 18h6L20 4z" fill="#8A6A3E"/>
+  <circle cx="20" cy="18" r="2.5" fill="#C8A96A"/>
+  <text x="42" y="26" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="600" letter-spacing="0.3em" fill="#17130F">AUREON</text>
+</svg>

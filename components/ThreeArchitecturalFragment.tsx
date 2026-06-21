@@ -1,13 +1,22 @@
 "use client";
 
-import { useRef, useEffect, Suspense } from "react";
+import React, { useRef, useEffect, Suspense } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Float, Environment, useGLTF, Center } from "@react-three/drei";
 import * as THREE from "three";
 
+// Simple Error Boundary to prevent 3D loader failures from crashing the site
+class CanvasErrorBoundary extends React.Component<{ children: React.ReactNode; fallback: React.ReactNode }, { hasError: boolean }> {
+  state = { hasError: false };
+  static getDerivedStateFromError() { return { hasError: true }; }
+  componentDidCatch(error: any, errorInfo: any) { console.error("3D Canvas Error:", error, errorInfo); }
+  render() { return this.state.hasError ? this.props.fallback : this.props.children; }
+}
+
+// REPLACE "YOUR_USERNAME" with your Hugging Face username
 const MODEL_PATH =
   process.env.NODE_ENV === "production"
-    ? "https://github.com/AbhiramRavula/villa-site/releases/download/v1.0.0/Meshy_AI_Cliffside_Sky_Villa_0516212452_texture.glb"
+    ? "https://huggingface.co/datasets/Soiler/villa-assets/resolve/main/Meshy_AI_Cliffside_Sky_Villa_0516212452_texture.glb"
     : "/Meshy_AI_Cliffside_Sky_Villa_0516212452_texture.glb";
 
 // Preload the GLB asset so it's ready before the component mounts
@@ -47,7 +56,7 @@ function ArchitecturalForm() {
       const scrollRotation = scrollProgressRef.current * Math.PI * 2;
       groupRef.current.rotation.y = baseRotation + scrollRotation;
 
-      // Scale based on scroll progress (matching the original GSAP logic)
+      // Scale based on scroll progress
       const scale = 1 + Math.sin(scrollProgressRef.current * Math.PI) * 0.15;
       groupRef.current.scale.set(scale, scale, scale);
 
@@ -60,7 +69,6 @@ function ArchitecturalForm() {
     <Float speed={1.5} rotationIntensity={0.2} floatIntensity={0.5}>
       <group ref={groupRef}>
         <Center>
-          {/* Adjust scale here if the villa model appears too large or small */}
           <primitive object={scene} scale={1.8} />
         </Center>
       </group>
@@ -70,36 +78,38 @@ function ArchitecturalForm() {
 
 export default function ThreeArchitecturalFragment() {
   return (
-    <div className="w-full h-full">
-      <Canvas
-        camera={{ position: [0, 1, 8], fov: 40 }}
-        gl={{ antialias: true, alpha: true }}
-        style={{ background: "transparent" }}
-        shadows
-      >
-        <ambientLight intensity={0.4} />
-        <directionalLight
-          position={[5, 8, 5]}
-          intensity={1.5}
-          castShadow
-          color="#fff8ee"
-          shadow-mapSize={[1024, 1024]}
-        />
-        <directionalLight
-          position={[-3, 2, -2]}
-          intensity={0.6}
-          color="#c8a96a"
-        />
-        <pointLight position={[0, 3, 3]} intensity={0.5} color="#c8a96a" />
+    <div className="w-full h-full min-h-[400px] flex items-center justify-center">
+      <CanvasErrorBoundary fallback={<div className="text-stone-400 text-sm">Failed to load architectural fragment</div>}>
+        <Canvas
+          camera={{ position: [0, 1, 8], fov: 40 }}
+          gl={{ antialias: true, alpha: true }}
+          style={{ background: "transparent" }}
+          shadows
+        >
+          <ambientLight intensity={0.4} />
+          <directionalLight
+            position={[5, 8, 5]}
+            intensity={1.5}
+            castShadow
+            color="#fff8ee"
+            shadow-mapSize={[1024, 1024]}
+          />
+          <directionalLight
+            position={[-3, 2, -2]}
+            intensity={0.6}
+            color="#c8a96a"
+          />
+          <pointLight position={[0, 3, 3]} intensity={0.5} color="#c8a96a" />
 
-        <fog attach="fog" args={["#17130f", 8, 20]} />
+          <fog attach="fog" args={["#17130f", 8, 20]} />
 
-        <Suspense fallback={null}>
-          <ArchitecturalForm />
-        </Suspense>
+          <Suspense fallback={null}>
+            <ArchitecturalForm />
+          </Suspense>
 
-        <Environment preset="city" environmentIntensity={0.5} />
-      </Canvas>
+          <Environment preset="city" environmentIntensity={0.5} />
+        </Canvas>
+      </CanvasErrorBoundary>
     </div>
   );
 }

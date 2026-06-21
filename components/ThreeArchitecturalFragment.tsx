@@ -5,7 +5,10 @@ import { Canvas, useFrame } from "@react-three/fiber";
 import { Float, Environment, useGLTF, Center } from "@react-three/drei";
 import * as THREE from "three";
 
-const MODEL_PATH = "/Meshy_AI_Cliffside_Sky_Villa_0516212452_texture.glb";
+const MODEL_PATH =
+  process.env.NODE_ENV === "production"
+    ? "https://github.com/AbhiramRavula/villa-site/releases/download/v1.0.0/Meshy_AI_Cliffside_Sky_Villa_0516212452_texture.glb"
+    : "/Meshy_AI_Cliffside_Sky_Villa_0516212452_texture.glb";
 
 // Preload the GLB asset so it's ready before the component mounts
 useGLTF.preload(MODEL_PATH);

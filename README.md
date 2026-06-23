@@ -1,6 +1,12 @@
 # AUREON — Private Architectural Worlds
 
-Aureon is a premium, cinematic architectural portfolio showcase designed to offer a luxurious, immersive storytelling experience. Built around a core philosophy that *“luxury is not decoration — it is precision made emotional”*, the site combines high-end WebGL graphics, scroll-driven physics/timelines, smooth scrolling, and custom typography to frame architecture as the ultimate private world.
+> **Live Demo:** [villa-site-two.vercel.app](https://villa-site-two.vercel.app/)
+
+<p align="center">
+  <video src="public/aureon-preview.mp4" width="100%" controls autoplay loop muted></video>
+</p>
+
+Aureon is a premium, cinematic architectural portfolio showcase designed to offer a luxurious, immersive storytelling experience. Built around a core philosophy that _“luxury is not decoration — it is precision made emotional”_, the site combines high-end WebGL graphics, scroll-driven physics/timelines, smooth scrolling, and custom typography to frame architecture as the ultimate private world.
 
 ---
 
@@ -8,13 +14,13 @@ Aureon is a premium, cinematic architectural portfolio showcase designed to offe
 
 Aureon is built on a modern, high-performance web stack optimized for smooth rendering, cinematic animations, and responsive interactions:
 
-*   **Core Framework**: [Next.js 14](https://nextjs.org/) (App Router, TypeScript, React 18)
-*   **Styling Engine**: [Tailwind CSS](https://tailwindcss.com/) & custom CSS Custom Properties (Vanilla CSS tokens)
-*   **Physics-Synced Smooth Scroll**: [Lenis Scroll](https://github.com/darkroomengineering/lenis)
-*   **Timeline & Scroll-Driven Animations**: [GSAP (GreenSock Animation Platform)](https://gsap.com/) & [ScrollTrigger](https://gsap.com/docs/v3/Plugins/ScrollTrigger/)
-*   **Interactive 3D Graphics**: [Three.js](https://threejs.org/) via React Three Fiber ([@react-three/fiber](https://github.com/pmndrs/react-three-fiber)) & [@react-three/drei](https://github.com/pmndrs/drei)
-*   **Motion Transitions**: [Framer Motion](https://www.framer.com/motion/)
-*   **Icons**: [Lucide React](https://lucide.dev/)
+- **Core Framework**: [Next.js 14](https://nextjs.org/) (App Router, TypeScript, React 18)
+- **Styling Engine**: [Tailwind CSS](https://tailwindcss.com/) & custom CSS Custom Properties (Vanilla CSS tokens)
+- **Physics-Synced Smooth Scroll**: [Lenis Scroll](https://github.com/darkroomengineering/lenis)
+- **Timeline & Scroll-Driven Animations**: [GSAP (GreenSock Animation Platform)](https://gsap.com/) & [ScrollTrigger](https://gsap.com/docs/v3/Plugins/ScrollTrigger/)
+- **Interactive 3D Graphics**: [Three.js](https://threejs.org/) via React Three Fiber ([@react-three/fiber](https://github.com/pmndrs/react-three-fiber)) & [@react-three/drei](https://github.com/pmndrs/drei)
+- **Motion Transitions**: [Framer Motion](https://www.framer.com/motion/)
+- **Icons**: [Lucide React](https://lucide.dev/)
 
 ---
 
@@ -23,23 +29,26 @@ Aureon is built on a modern, high-performance web stack optimized for smooth ren
 Aureon adopts a premium, warm-neutral palette that feels grounded, refined, and editorial:
 
 ### Harmonious Color Palette
-*   `--background` / `bg-background`: `#F5EFE4` (Warm Mist / Cream)
-*   `--surface` / `bg-surface`: `#FFF8EE` (Warm White / Alabaster)
-*   `--stone` / `text-stone`: `#D8C3A5` (Neutral Grayish-Gold)
-*   `--champagne` / `text-champagne`: `#C8A96A` (Primary Metallic Gold accent)
-*   `--bronze` / `text-bronze`: `#8A6A3E` (Darker Metallic Bronze accent)
-*   `--ink` / `text-ink`: `#17130F` (Cinematic Warm Black)
-*   `--muted-ink` / `text-muted-ink`: `#6F6558` (Softer Olive-Brown)
-*   `--cloud` / `text-cloud`: `#FFFFFF` (Pure White)
+
+- `--background` / `bg-background`: `#F5EFE4` (Warm Mist / Cream)
+- `--surface` / `bg-surface`: `#FFF8EE` (Warm White / Alabaster)
+- `--stone` / `text-stone`: `#D8C3A5` (Neutral Grayish-Gold)
+- `--champagne` / `text-champagne`: `#C8A96A` (Primary Metallic Gold accent)
+- `--bronze` / `text-bronze`: `#8A6A3E` (Darker Metallic Bronze accent)
+- `--ink` / `text-ink`: `#17130F` (Cinematic Warm Black)
+- `--muted-ink` / `text-muted-ink`: `#6F6558` (Softer Olive-Brown)
+- `--cloud` / `text-cloud`: `#FFFFFF` (Pure White)
 
 ### Typography Hierarchy
-*   **Sans & Display Fonts**: `Inter` (geometric, clean layout structure)
-*   **Editorial Serif Font**: `Cormorant Garamond` (high-contrast, italic, luxurious headings)
-*   **Hero Headers**: Large clamped headers (`text-hero` / `clamp(4rem, 10vw, 11rem)`) with high tracking adjustments.
+
+- **Sans & Display Fonts**: `Inter` (geometric, clean layout structure)
+- **Editorial Serif Font**: `Cormorant Garamond` (high-contrast, italic, luxurious headings)
+- **Hero Headers**: Large clamped headers (`text-hero` / `clamp(4rem, 10vw, 11rem)`) with high tracking adjustments.
 
 ### Layout Grid & Transitions
-*   **Spacing Grid**: Strict 8px-base layout system (`--space-1` to `--space-24`).
-*   **Signature Easings**: Smooth custom ease cubic-bezier curves (`--ease-aureon`: `cubic-bezier(0.25, 0.1, 0.25, 1)`).
+
+- **Spacing Grid**: Strict 8px-base layout system (`--space-1` to `--space-24`).
+- **Signature Easings**: Smooth custom ease cubic-bezier curves (`--ease-aureon`: `cubic-bezier(0.25, 0.1, 0.25, 1)`).
 
 ---
 
@@ -54,7 +63,7 @@ Aureon is built with unique cinematic features that create a tactile connection 
 3.  **Scroll-Driven Manifesto (`ManifestoSection.tsx`)**:
     Highlights the core architectural philosophy, fading individual words into high-contrast `--ink` colors letter-by-letter as the user scrolls, creating a rhythmic reading pace.
 4.  **Horizontal Anthology Track (`AnthologySection.tsx`)**:
-    Translates vertical scrolls into a seamless horizontal project slider. Features individual card parallax image offsets and hovering stat reveals for key projects (*Villa Solaris*, *Tower Meridian*, *Estate Umbra*).
+    Translates vertical scrolls into a seamless horizontal project slider. Features individual card parallax image offsets and hovering stat reveals for key projects (_Villa Solaris_, _Tower Meridian_, _Estate Umbra_).
 5.  **WebGL Architectural Sculpture (`CraftSection.tsx` & `ThreeArchitecturalFragment.tsx`)**:
     Synthesizes standard text panels with a WebGL canvas. A custom-modeled 3D abstract sculpture rotates and scales dynamically relative to the user's scroll speed, using React Three Fiber.
 6.  **Signature Amenities Panel (`SignatureAmenitiesSection.tsx`)**:
@@ -108,32 +117,43 @@ Aureon is built with unique cinematic features that create a tactile connection 
 Follow these commands to configure the development environment or build the website for production:
 
 ### 1. Install Dependencies
+
 Initialize the project package tree:
+
 ```bash
 npm install
 ```
 
 ### 2. Run the Development Server
+
 Launch a local development environment with Hot Module Replacement (HMR):
+
 ```bash
 npm run dev
 ```
+
 Open [http://localhost:3000](http://localhost:3000) in your browser to inspect the application.
 
 ### 3. Build for Production
+
 Generate optimized static pages and bundled production files:
+
 ```bash
 npm run build
 ```
 
 ### 4. Run Production Build
+
 Start the production server locally on port 3000:
+
 ```bash
 npm run start
 ```
 
 ### 5. Linting check
+
 Run ESLint checkups:
+
 ```bash
 npm run lint
 ```

@@ -3,8 +3,7 @@
 > **Live Demo:** [villa-site-two.vercel.app](https://villa-site-two.vercel.app/)
 
 <p align="center">
-  <video src="https://github.com/AbhiramRavula/villa-site/releases/download/v1.0.0/aureon-preview.mp4" width="100%" controls autoplay loop muted></video>
-
+  <video src="https://github.com/user-attachments/assets/8f840711-ac3e-4562-8801-2645b8f08ca7" width="100%" controls autoplay loop muted></video>
 </p>
 
 Aureon is a premium, cinematic architectural portfolio showcase designed to offer a luxurious, immersive storytelling experience. Built around a core philosophy that _“luxury is not decoration — it is precision made emotional”_, the site combines high-end WebGL graphics, scroll-driven physics/timelines, smooth scrolling, and custom typography to frame architecture as the ultimate private world.

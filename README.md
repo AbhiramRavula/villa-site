@@ -3,7 +3,7 @@
 > **Live Demo:** [villa-site-two.vercel.app](https://villa-site-two.vercel.app/)
 
 <p align="center">
-  <video src="https://raw.githubusercontent.com/AbhiramRavula/villa-site/main/public/aureon-preview.mp4" width="100%" controls autoplay loop muted></video>
+  <video src="https://github.com/AbhiramRavula/villa-site/releases/download/v1.0.0/aureon-preview.mp4" width="100%" controls autoplay loop muted></video>
 
 </p>
 
